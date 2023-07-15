@@ -12,22 +12,22 @@ Based on the information you provided, it seems that you have successfully compl
 <h3>1. Can you explain your choice of state structure in Redux?</h3>
 
 
- Choice of state structure in Redux:
+ 
    In Redux, I have structured the state using the Redux Toolkit's `createSlice` function. I created a `postSlice` that represents the state for the posts. It contains properties like `loading`, `post`, and `edit` to manage the loading state, store the retrieved posts, and track the edit mode for a post.
 
 <h3>2. How have you handled side effects in your Redux code?</h3>
 
- Handling side effects in Redux code:
+
    To handle side effects in Redux, I used the Redux Toolkit's `createAsyncThunk` to define async actions. For example, I used `createAsyncThunk` to define `getAllPost`, `getPost`, and `delPost` thunks. These thunks make API requests and dispatch actions based on the async operation's state (pending, fulfilled, rejected).
 
 <h3>3. How did you ensure components re-render efficiently?</h3>
 
-Ensuring efficient component re-rendering:
+
    To ensure efficient component re-rendering, I leveraged React's virtual DOM and the memoization capability of React Redux's `useSelector` hook. By using the `useSelector` hook, I selected only the required state slices that the component needs. This way, the component will re-render only when the selected state changes, avoiding unnecessary re-renders.
 
 <h3>4. If given more time, how would you improve this application?</h3>
 
-Improvements with more time:
+
    Given more time, I would consider the following improvements:
    - Implementing pagination or infinite scrolling to handle large sets of data.
    - Adding more features, such as sorting or filtering the posts based on different criteria.
@@ -37,5 +37,5 @@ Improvements with more time:
 
 <h3>5. What was your approach to testing the components and the Redux store?</h3>
 
- Approach to testing components and the Redux store:
+
    To test the components and Redux store, I would use testing frameworks like Jest and React Testing Library. I would write unit tests for components to check their rendering, behavior, and user interactions. For Redux store testing, I would write integration tests to verify the correct behavior of actions, reducers, and state updates. Additionally, I would also test the async actions using mocked API responses to ensure the proper handling of async operations.
