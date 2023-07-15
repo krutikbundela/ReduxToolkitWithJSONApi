@@ -38,4 +38,4 @@ Based on the information you provided, it seems that you have successfully compl
 <h3>5. What was your approach to testing the components and the Redux store?</h3>
 
 
-   To test the components and Redux store, I would use testing frameworks like Jest and React Testing Library. I would write unit tests for components to check their rendering, behavior, and user interactions. For Redux store testing, I would write integration tests to verify the correct behavior of actions, reducers, and state updates. Additionally, I would also test the async actions using mocked API responses to ensure the proper handling of async operations.
+   To test the components and Redux store, I Have used React DevTools for state mangement and for Redux I have use ReduxDevTools to see the store data t, the redusers , and action. Additionally, I would also test the async actions using mocked API responses to ensure the proper handling of async operations.
