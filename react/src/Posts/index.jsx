@@ -3,6 +3,7 @@ import {Button,Box , TextField, Typography, Divider, Paper } from '@mui/material
 import {useSelector, useDispatch} from 'react-redux';
 import { delPost, getAllPost, getPost } from '../redux/postSlice';
 import Loading from './Loading';
+import Table from './Table';
 
 const Post = () => {
 
@@ -24,6 +25,21 @@ const {loading , post , edit , } = useSelector((state) => ({...state.post}))
       // dispatch(loadUserPostStart({ id }));
       setId("");
     }
+  };
+
+  const [showTable, setShowTable] = useState(false); 
+  const [showCard, setShowCard] = useState(false); 
+
+  const handleShowCard = () => {
+    dispatch(getAllPost()); 
+    setShowTable(false); 
+    setShowCard(true); 
+  };
+  
+  const handleShowTable = () => {
+    dispatch(getAllPost()); 
+    setShowCard(false);
+    setShowTable(true);
   };
 
   return (
@@ -49,8 +65,11 @@ const {loading , post , edit , } = useSelector((state) => ({...state.post}))
         <Button type="primary" ml={1} onClick={fetchUserPost}>
           Fetch User Post
         </Button>
-        <Button type="primary" mr={1} onClick={() => dispatch(getAllPost())}>
-          Get All Post
+        <Button type="primary" mr={1} onClick={handleShowCard}>
+          Get Card[All Post]
+        </Button>
+        <Button type="primary" mr={1}  onClick={handleShowTable}>
+          Get Table[All Post]
         </Button>
         </Box>
    
@@ -118,18 +137,17 @@ const {loading , post , edit , } = useSelector((state) => ({...state.post}))
                   >
                   Delete
                 </Button>
-
-                <Button type="primary">Edit </Button>
               </Box>
                   </Paper>
             </div>
           )}
 
-          {/* Get All Post */}
+          {/* Get All Post Card */}
+          
 
-        {post.length > 1 && post.map((post) =>{
-            return (
-              <>
+        {post.length > 1 && showCard &&  post.map((post) =>{
+          return (
+            <>
                 <div key={post.id} className="site-card-border-less-wrapper">
               <Paper elevation={8} sx={{
                 m:3,
@@ -195,7 +213,15 @@ const {loading , post , edit , } = useSelector((state) => ({...state.post}))
               </>
             )
           })
-       }
+        }
+
+          {/* Get All Post Table */}
+
+        {post.length > 1 && showTable && <Box sx={{
+           display:"flex",
+           justifyContent:'center' ,
+           alignItems:'center',
+        }}> <Table post={post}/></Box>}
 
         </>
       )} 

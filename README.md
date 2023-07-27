@@ -3,39 +3,31 @@
 ✅Used JSONApi = https://jsonplaceholder.typicode.com/posts✅
 
 # Features <br/>
-✅Get All Posts ✅ <br/>
+✅Get All Posts[On MUI Card , Table] ✅ <br/>
 ✅Search Post By User Id✅ <br/>
 ✅Delete Post By User Id✅
 
-Based on the information you provided, it seems that you have successfully completed the assignment by building a React application with Redux. Below are the answers to the questions you mentioned:
-
-<h3>1. Can you explain your choice of state structure in Redux?</h3>
 
 
- 
-   In Redux, I have structured the state using the Redux Toolkit's `createSlice` function. I created a `postSlice` that represents the state for the posts. It contains properties like `loading`, `post`, and `edit` to manage the loading state, store the retrieved posts, and track the edit mode for a post.
+<h3>1. Give an example of an async await based function to fetch data from the JSON placeholder API ?</h3>
 
-<h3>2. How have you handled side effects in your Redux code?</h3>
+![Alt text](image.png)
 
+<h3>2. Display the results from above in a MUI table that only takes half of the screen width on laptop screens and full screen width on mobile screen ?</h3>
 
-   To handle side effects in Redux, I used the Redux Toolkit's `createAsyncThunk` to define async actions. For example, I used `createAsyncThunk` to define `getAllPost`, `getPost`, and `delPost` thunks. These thunks make API requests and dispatch actions based on the async operation's state (pending, fulfilled, rejected).
+In Laptop
+![Alt text](image-1.png)
 
-<h3>3. How did you ensure components re-render efficiently?</h3>
+To Achieve Responsiveness
+![Alt text](image-3.png)
 
-
-   To ensure efficient component re-rendering, I leveraged React's virtual DOM and the memoization capability of React Redux's `useSelector` hook. By using the `useSelector` hook, I selected only the required state slices that the component needs. This way, the component will re-render only when the selected state changes, avoiding unnecessary re-renders.
-
-<h3>4. If given more time, how would you improve this application?</h3>
-
-
-   Given more time, I would consider the following improvements:
-   - Implementing pagination or infinite scrolling to handle large sets of data.
-   - Adding more features, such as sorting or filtering the posts based on different criteria.
-   - Improving error handling and displaying meaningful error messages to the user.
-   - Enhancing the UI and adding more interactive elements to provide a better user experience.
-   - Writing comprehensive unit tests and integration tests for components, reducers, and actions using testing frameworks like Jest and React Testing Library.
-
-<h3>5. What was your approach to testing the components and the Redux store?</h3>
+In Phone
+![Alt text](image-2.png)
 
 
-   To test the components and Redux store, I Have used React DevTools for state mangement and for Redux I have use ReduxDevTools to see the store data t, the redusers , and action. Additionally, I would also test the async actions using mocked API responses to ensure the proper handling of async operations.
+
+<h3>3.  How do you pass the redux store to the react app ?</h3>
+
+![Alt text](image-4.png)
+
+I Have Passed the store in Parent component main.tsx so that whole app can access the redux store.
